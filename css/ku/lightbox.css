@@ -1,0 +1,65 @@
+/* LIGHTBOX */
+.lightbox_content {
+	padding: 15px 20px;
+}
+.lightbox_content p {
+	font-size: 15px;
+}
+.lightbox_content h3 {
+	font-size: 20px;
+}
+.lightbox_content .button {
+	float: right;
+}
+.lightbox_content .custom-dropdown__select {
+    padding: 0.6em;
+}
+.lightbox_content .custom-dropdown__select {
+    width: 300px;
+}
+.lightbox_content input[type="range"] {
+    width: 280px;
+}
+.lightbox_content input[type=range]::-moz-range-track {
+    height: 13px;
+}
+.lightbox_content input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+}
+.lightbox_content td {
+	height: 50px;
+	white-space: nowrap;
+}
+.lightbox_content .tooltip {
+	white-space: normal;
+}
+.advanced-search_form {
+	width: 490px;
+	margin-left: 30px;
+}
+.lightbox_content .dotted-line {
+	margin-bottom: 20px;
+	margin-top: 5px;
+}
+.check_boxes p {
+	margin-left: 9px;
+	margin-right: 35px;
+}
+.check_boxes_small p {
+	margin-left: 9px;
+	font-size: 14px;
+}
+.check_boxes_small td {
+	height: 35px;
+}
+.check_boxes input, .check_boxes_small input {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.advanced_filter_check {
+	float: left;
+	margin: 5px 10px 0px 8px;
+}
+
+/* end lightbox */

@@ -1,0 +1,299 @@
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+    min-width: 960px;
+    max-width: 1160px;
+}
+
+a:link, a:visited {
+    /* color: #459504; */
+    text-decoration: none;
+}
+
+a:hover {
+    /* color: #347400; */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+table {
+    empty-cells: show;
+}
+
+body {
+    background: #303030;
+    font: 13px/22px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 300;
+    min-width: 988px;
+}
+
+td, th, tr, body {
+    color: #606060;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+input, button, select, textarea {
+    color: #444;
+    background: #fff;
+    border: 1px solid #6A6A6A;
+    padding: 4px;
+    font-size: 12px;
+}
+
+select {
+    padding: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #474747;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0;
+}
+
+/* Kodac Styles */
+a {
+    outline: none;
+    transition: all 0.2s ease-out 0s;
+}
+
+p, span, form {
+    margin: 0;
+    padding: 0;
+}
+
+#header-container {
+    background: url('../images/header-bg.jpg') 50% 0;
+}
+
+#header {
+    background: #474747;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 100px;
+}
+
+#logo {
+    display: block;
+    margin-left: 12px;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url(../images/logos/logo2.png);
+    margin-top: 27px;
+    width: 278px;
+    height: 38px;
+    background-size: 278px 38px;
+}
+
+#account {
+    float: none;
+    margin: 0px;
+    position: absolute;
+    right: 0px;
+    width: 800px;
+}
+
+#account ul {
+    float: right;
+}
+
+#account li {
+    float: left;
+}
+
+#account ul, #account li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #888;
+    font-size: 13px;
+}
+
+#account li:after {
+    margin: 0 10px;
+    content: "/";
+    position: relative;
+    top: 1px;
+    color: #98D4C1;
+}
+
+#account li:first-child > img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    margin-right: 10px;
+    margin-top: -8px;
+}
+
+#account li:last-child:after {
+    content: "";
+}
+
+#account li.greeting:after {
+    content: "";
+}
+
+#account li a {
+    padding: 0;
+    color: #FFF;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#account .btn-login > a, #account .btn-register > a {
+    background: #97b4cf;
+    border-bottom: 4px solid #7098b9;
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2em;
+    padding: 3px 0px;
+    width: 95px;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+#account .btn-register > a {
+    background-color: #63c810;
+    border-color: #459504;
+    margin-left: 5px;
+    color: #fff;
+}
+
+#account li a:hover {
+    background: #7098b9;
+    border-bottom: 4px solid #5685aa;
+}
+
+#account .btn-register:hover > a {
+    background-color: #54b009;
+    border-bottom: 4px solid #459504;
+    color: #FFF;
+}
+
+#navbar {
+    background: #63c810;
+    height: 44px;
+    border-top: solid 4px #459504;
+    border-bottom: solid 4px #459504;
+}
+
+#topnav, #topnav ul {
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+#topnav li {
+    float: left;
+    margin: 0;
+    padding: 0 0 2px;
+    position: relative;
+    list-style: none;
+    z-index: 102;
+}
+
+#topnav li a {
+    display: block;
+    padding: 0 14px;
+    line-height: 44px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#topnav > li > a {
+    font-weight: 400;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 16px;
+}
+
+#topnav > li > .active {
+    background: #459504;
+    color: #fff;
+}
+
+#button_forum > a {
+    background-color: #54b009;
+}
+
+#button_forum > a.active {
+    background-color: #459504;
+}
+
+#topnav li:hover > a {
+	color: #fff;
+	background: #54b009;
+}
+#topnav li ul {
+	position: absolute;
+	width: 200px;
+	left: -999em;
+	background: #54B009;
+}
+#topnav li li {
+	width: 200px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+#topnav li li a {
+	display: block;
+	width: 172px;
+	height: auto;
+	float: none;
+	line-height: 32px;
+	font-size: 14px;
+	font-weight: 300;
+}
+#topnav li li:hover a {
+	background-color: #459504;
+}
+#topnav li:hover ul {
+	left: 0;
+	top: 44px;
+}
+#topnav li:hover ul ul,
+#topnav li:hover ul ul ul,
+#topnav li:hover ul ul ul ul {
+	top: -999em;
+	left: auto;
+}
+#topnav li li:hover ul,
+#topnav li li li:hover ul,
+#topnav li li li li:hover ul {
+	left: 200px;
+	top: 0;
+}
+
+#main {
+    background: #044595;
+    padding: 0 0 40px;
+    -webkit-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.4) inset, 0px -6px 12px -12px rgba(0, 0, 0, 0.4) inset;
+    -moz-box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.4) inset, 0px -6px 12px -12px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.4) inset, 0px -6px 12px -12px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* my stuff */
+#peeking-dog {
+    background-image: url(../images/peeking-ned_5.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 300px;
+    height: 156px;
+    position: absolute;
+    top: -79px;
+    right: -2px;
+    z-index: 1011;
+}

@@ -1,0 +1,45 @@
+/* HOME BOX TABS */
+.box_tab {
+	width: 37px;
+	height: 30px;
+	background-size: 37px 30px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 19px;
+    right: 21px;
+}
+#dog-food-focus .box_tab {
+	background-image: url(../images/home_box_tabs/bowl.png);
+}
+#trending .box_tab {
+	background-image: url(../images/home_box_tabs/trending.png);
+}
+#opinion-poll .box_tab {
+	background-image: url(../images/home_box_tabs/question.png);
+}
+#latest-article .box_tab {
+	background-image: url(../images/home_box_tabs/news.png);
+}
+#ingredient-focus .box_tab {
+	background-image: url(../images/home_box_tabs/magnify.png);
+}
+#site-news .box_tab {
+	background-image: url(../images/home_box_tabs/bowl.png);
+}
+#top-of-the-shops .box_tab {
+	background-image: url(../images/home_box_tabs/shop.png);
+}
+#join-us-on-facebook .box_tab {
+	background-image: url(../images/home_box_tabs/facebook.png);
+}
+#your-comments .box_tab {
+	background-image: url(../images/home_box_tabs/comment.png);
+}
+
+#quick-search .box_tab {
+	background-image: url(../images/home_box_tabs/magnify.png);
+}
+#find-a-food .box_tab {
+	background-image: url(../images/home_box_tabs/magnify.png);
+}
+/* end home tabs */

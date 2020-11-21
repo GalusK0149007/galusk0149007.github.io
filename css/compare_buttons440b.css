@@ -1,0 +1,102 @@
+.compare_tick_box input {
+  margin-right: 3px;
+}
+.compare_tick_box label {
+	font-size: 0.9em;
+}
+.tooltip_compare {
+	cursor: pointer;
+	text-decoration: none;
+	position: relative;
+}
+.tooltip_compare span {
+	margin-left: -999em;
+	position: absolute;
+	box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.2);
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	-moz-box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.2);
+	-webkit-box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.2);
+	box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.2);
+}
+.tooltip_compare:hover span {
+  	width: 120px;
+	left: -50px;
+	bottom: 40px;
+	z-index: 399;
+	font-size: 12px;
+	line-height: 1.3;
+	text-align: center;
+	margin: 3px;
+	padding: 7px 6px 0px;
+}
+.tooltip_compare:hover span:after {
+	position: relative;
+	content: "";
+	bottom: -7px;
+	left: 47px;
+	border-style: solid;
+	border-width: 7px 12px 0px;
+	border-color: #FFF transparent;
+	display: block;
+	width: 0px;
+	z-index: 401;
+}
+#compare_banner {
+	height: 58px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	text-align: center;
+	background: none repeat scroll 0% 0% #515151;
+	z-index: 400;
+	box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.4);
+	-webkit-box-shadow: 0px 0px 4px 1px rgba(61, 61, 61, 0.4);
+}
+#compare_count {
+	color: #58c0ff;
+	font-weight: 400;
+	padding: 0 10px 0 10px;
+	text-align: right;
+}
+.compare_img {
+  width: 28px;
+  height: 34px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-position: center center;
+  margin-right: 4px;
+  border: 2px solid white;
+}
+.compare_span {
+  display: block;
+  float: left;
+}
+#compare_images {
+	padding: 0px 16px 0px 7px;
+}
+#compare_clear {
+	color: #eaeaea;
+	font-weight: 300;
+	padding: 0 10px 0 10px;
+	text-align: left;
+}
+#compare_clear:hover {
+	color: #58c0ff;
+	text-decoration: none;
+}
+.compare_now .button {
+	width: 114px;
+	letter-spacing: -0.05em;
+	font-size: 1em;
+}
+.button_blue {
+	background-color: #00b1ff;
+	border-color: #0095d7;
+}
+.button_blue:hover {
+	background-color: #0095d7;
+	border-color: #017eb5;
+}
