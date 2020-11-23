@@ -1,0 +1,151 @@
+/* HOME POLYGONS */
+#triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 40px solid red;
+    border-left: 100px solid transparent;
+}
+#triangle-topleft {
+    width: 0;
+    height: 0;
+    border-top: 40px solid red;
+    border-right: 100px solid transparent;
+}
+#upper_box_1 {
+	position: relative;
+	width: 100%;
+	height: 270px;
+	background: #FFFFFF;
+	z-index: 13;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	background-image: url(../images/green-bowl_slice.jpg);
+	background-repeat: no-repeat;
+	background-position: -55px -20px;
+}
+#upper_box_2 {
+	position: relative;
+	width: 100%;
+	height: 270px;
+	padding: 0px;
+	background: #FFFFFF;
+	z-index: 11;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+}
+.triangle_1 {
+   	height: 270px;
+	position: relative;
+	overflow: hidden;
+	width: 240px;
+	float: left;
+	margin-right: -210px;
+	z-index: 101;
+}
+.triangle_1:after {
+	content: "";
+	position: absolute;
+	width: 192px;
+	height: 192px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    top: 39px;
+	left: -96px;
+	background: none repeat scroll 0% 0% #FFF;
+	z-index: 102;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+}
+.triangle_2 {
+   	width: 135px;
+	height: 135px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 9px -4px 4px -5px rgba(61, 61, 61, 0.4);
+	-webkit-box-shadow: 9px -4px 4px -5px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 9px -4px 4px -5px rgba(61, 61, 61, 0.4);
+	z-index: 100;
+}
+.triangle_2:after {
+    content: "";
+	position: absolute;
+	background: none repeat scroll 0% 0% #FFF;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    top: -96px;
+	left: 39px;
+	height: 192px;
+	width: 192px;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+}
+.triangle_3 {
+   	width: 135px;
+	height: 135px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 9px 5px 4px -4px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 9px 5px 4px -4px rgba(61, 61, 61, 0.4);
+	-webkit-box-shadow: 9px 5px 4px -4px rgba(61, 61, 61, 0.4);
+	z-index: 101;
+}
+.triangle_3:after {
+    content: "";
+	position: absolute;
+	background: none repeat scroll 0% 0% #FFF;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    top: 39px;
+	left: 39px;
+	height: 192px;
+	width: 192px;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+}
+.no_overflow {
+	overflow: hidden;
+}
+#which-dog-food {
+	padding: 20px 0 20px 200px;
+	min-width: 200px;
+	position: relative;
+	left: -100px;
+}
+#which-dog-food p {
+	font-size: 15px;
+}
+#quick-search {
+	padding: 20px;
+}
+#quick-search p {
+	font-size: 15px;
+}
+#quick-search_form {
+	margin-top: 4px;
+	min-width: 340px;
+	width: 96%;
+}
+#quick-search_form td {
+	height: 31px;
+}
+#quick-search_form output_cell {
+ padding-left: 15px;
+}
+#quick_search .custom-dropdown__select {
+    width: 236px;
+}
+#entire_directory {
+	font-size: 15px;
+	position: absolute;
+	bottom: -12px;
+	right: 0px;
+}
+/* end home polygons */

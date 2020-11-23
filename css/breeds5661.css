@@ -1,0 +1,59 @@
+.breeds_container {
+	margin: auto;
+    margin-top: -25px;
+    width: 280px;
+}
+.breeds {
+	background-image: url(../images/review-breed-sizes2.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 260px;
+    height: 63px;
+    display: inline-block;
+}
+.breeds_off {
+    background-position-y: 0px;
+}
+.breeds_toy {
+    width: 33px;
+    background-position-x: 2px;
+    margin-right: 3px;
+}
+.breeds_small {
+	width: 42px;
+    background-position-x: -32px;
+    margin-right: 3px;
+}
+.breeds_medium {
+   	width: 61px;
+    background-position-x: -73px;
+    margin-right: 3px;
+}
+.breeds_large {
+    width: 61px;
+    background-position-x: -134px;
+    margin-right: 3px;
+}
+.breeds_giant {
+    width: 63px;
+    background-position-x: -196px;
+}
+
+.breeds_lightbox {
+	margin-right: 4px;
+}
+.breeds_lightbox.breeds_toy {
+	height: 30px;
+}
+.breeds_lightbox.breeds_small {
+	height: 37px;
+}
+.breeds_lightbox.breeds_medium {
+	height: 50px;
+}
+.breeds_lightbox.breeds_large {
+	height: 55px;
+}
+.breeds_lightbox.breeds_giant {
+	height: 60px;
+}
