@@ -2572,75 +2572,8 @@
 <script type="text/javascript">(function(_,$){$('a[id^="button_cart_ajax"], a[id^="button_cart_"]').click(function(){var milliseconds=new Date().getTime();var product_id=$(this).parents('form').find('input[name$="[product_id]"]').val();console.log(product_id);window._fbq.push(['track','AddToCart',{content_type:'product',content_ids:[product_id],timestamp:milliseconds}]);});}(Tygh,Tygh.$));</script>
 <script type="text/javascript">function onSyneriseLoad(){SR.init({'trackerKey':'70FCC67C-2010-1DE4-D695-08DC2F82491C',});}(function(s,y,n,e,r,i,se){s['SyneriseObjectNamespace']=r;s[r]=s[r]||[],s[r]._t=1*new Date(),s[r]._i=0,s[r]._l=i;var z=y.createElement(n),se=y.getElementsByTagName(n)[0];z.async=1;z.src=e;se.parentNode.insertBefore(z,se);z.onload=z.onreadystatechange=function(){var rdy=z.readyState;if(!rdy||/complete|loaded/.test(z.readyState)){s[i]();z.onload=null;z.onreadystatechange=null;}};})(window,document,'script','../../www.snrcdn.net/sdk/3.0/synerise-javascript-sdk.min.js','SR','onSyneriseLoad');</script>
 <script type="application/ld+json">
-        [
-    {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "totuldespreca.ro",
-        "description": "Magazinul online .ro, peste zece mii de produse cu livrare rapid\u0103 la domiciliu, cele mai bune pre\u021buri, magazinul prietenos pentru animalul t\u0103u de companie. Fera - Pet Friendly.",
-        "url": "https://fera.ro/",
-        "logo": "https://fera.ro/images/logos/57/fera-logo-with-white_ro.png"
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https://fera.ro/",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://fera.ro/index.php?dispatch=products.search&q={query}",
-            "query-input": "required name=query"
-        }
-    },
-    {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@type": "Thing",
-                    "@id": "https://fera.ro/",
-                    "name": "Home"
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@type": "Thing",
-                    "@id": "https://fera.ro/caini/",
-                    "name": "C\u00e2ini"
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                    "@type": "Thing",
-                    "@id": "https://fera.ro/hrana-si-bunatati-pentru-caini/",
-                    "name": "Hran\u0103 \u0219i recompense "
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "item": {
-                    "@type": "Thing",
-                    "@id": "https://fera.ro/hrana-pentru-caini/",
-                    "name": "Hran\u0103 uscat\u0103"
-                }
-            }
-        ]
-    }
-]
+
     </script>
-<script>function Class_2lm_Tawk(config){this.config=config;var that=this;this.api=this.api||{},Tawk_LoadStart=new Date();this.cart=null;this.init=function(cart){this.cart=cart;};}</script>
-<script>function Class_2lm_Tawk_Cart(config){this.config=config;this.products=[];this.eventManager=new Class_2lm_Tawk_Cart_Event();this.init=function(){if(typeof this.config.events.Cart!=='undefined'){this.eventManager.registerEvents(this.config.events.Cart);}};}</script>
-<script>function Class_2lm_Tawk_Cart_Event(){this.events={};this.registerEvents=function(events){for(var i in events){this.events[i]=new window["Class_2lm_Tawk_Cart_Events_"+i];}};this.raiseEvent=function(eventName,data){if(this.events[eventName]){this.events[eventName].call(data);}};}</script>
-<script>function Class_2lm_Tawk_Cart_Events_Add_Product_Cart_Event(){this.call=function(product){Tawk_API.addEvent('product-add-to-cart',product,function(error){});};}</script>
-<script>function Class_2lm_Tawk_Cart_Events_Drop_Product_Cart_Event(){this.call=function(product){Tawk_API.addEvent('product-drop-from-cart',product,function(error){});};}</script>
-<script>var object_2lm_tawk=(function(){var config=JSON.parse('{"user_id":"5c8f7f42c37db86fcfce6bf1","api_key":"3965364d79c88e847204f0b5e69f7ca7e58a8d79","status":"A","priority":"4294967295","unmanaged":"0","events":{"Cart":{"Add_Product_Cart_Event":"Y","Drop_Product_Cart_Event":"Y"}}}');var tawk=new Class_2lm_Tawk(config);var cart=new Class_2lm_Tawk_Cart(config);cart.init();tawk.init(cart);return tawk;})();</script>
 <script>object_2lm_elasticsearch_observer={events:{},registerEvent:function(name){this.events[name]=[];},addEventListener:function(name,callback){this.events[name].push(callback);},raiseEvent:function(){var args=[];for(var i in arguments){args.push(arguments[i]);}var name=args.shift();for(i=0;i<this.events[name].length;i++){this.events[name][i].call(null,args);}}};</script>
 <script>object_2lm_elasticsearch_observer.registerEvent("beforeSearch");object_2lm_elasticsearch_observer.registerEvent("afterSearch");object_2lm_elasticsearch_observer.addEventListener('beforeSearch',function(){$('#id-2lm-elasticsearch-ajax-loading-box').show();});object_2lm_elasticsearch_observer.addEventListener('afterSearch',function(){$('#id-2lm-elasticsearch-ajax-loading-box').hide();});(function($){$.fn.delayKeyDown=function(callback,ms){var timer=0;$(this).on('keydown',function(e){var elem=$(this);clearTimeout(timer);timer=setTimeout(function(){callback.call(elem,e);},ms);});return $(this);};})(jQuery);jQuery.extend(jQuery.fn,{within:function(pSelector){return this.filter(function(){return $(this).closest(pSelector).length;});}});</script>
 <script>$('#id-2lm-elasticsearch').css('top',$('#search_input').parents('form').outerHeight());$(document).on('click',function(e){if($(e.target).within('.top-search').length===0){$('#id-2lm-elasticsearch').empty();$('.span8.et-top-menu').removeClass('phone-zoom');}});var object_2lm_elasticsearch_autocomplete={active_item:null,start:function(){var that=this;var typingTimer;$('#search_input').on('paste keyup',function(e){if($(this).val().length>2&&e.which!==27&&e.which!==38&&e.which!==40&&e.which!==13){clearTimeout(typingTimer);var search_str=$(this).val();typingTimer=setTimeout(function(){object_2lm_elasticsearch_observer.raiseEvent('beforeSearch');$.ceAjax('request','https://fera.ro/index.php?dispatch=2lm_elasticsearch.autocomplete',{result_ids:'id-2lm-elasticsearch',type:'POST',hidden:true,data:{q:search_str},callback:function(){object_2lm_elasticsearch_observer.raiseEvent('afterSearch');}});$('#green-id-2-rwd').addClass('hidden');$('#green-flat-btn .ty-menu__item-link').addClass('hidden');$('.span8.et-top-menu').addClass('phone-zoom');},300);}});$('#search_input').delayKeyDown(function(e){if(e.which===27){$('#id-2lm-elasticsearch').empty();$('#green-id-2-rwd').removeClass('hidden');$('#green-flat-btn .ty-menu__item-link').removeClass('hidden');$('.span8.et-top-menu').removeClass('phone-zoom');}else if(e.which===38){var items=$('#id-2lm-elasticsearch .content > ul > li');if(!that.active_item){var tmp=$('#id-2lm-elasticsearch .content > ul > li').get(items.length-1);that.active_item=$(tmp);}else{if(that.active_item.index()>1){that.active_item.removeClass('active');that.active_item=that.active_item.prev();}else{that.active_item.removeClass('active');var tmp=$('#id-2lm-elasticsearch .content > ul > li').get(items.length-1);that.active_item=$(tmp);}}that.active_item.addClass('active');}else if(e.which===40){var items=$('#id-2lm-elasticsearch .content > ul > li');if(!that.active_item){var tmp=$('#id-2lm-elasticsearch .content > ul > li').get(0);that.active_item=$(tmp);}else{if(that.active_item.index()<items.length){that.active_item.removeClass('active');that.active_item=that.active_item.next();}else{that.active_item.removeClass('active');var tmp=$('#id-2lm-elasticsearch .content > ul > li').get(0);that.active_item=$(tmp);}}that.active_item.addClass('active');}},300);},acordeon:function(){$('#id-2lm-elasticsearch').on('click','.content h4',function(){$(this).next('ul').slideToggle(200);});}};object_2lm_elasticsearch_autocomplete.start();</script>
@@ -2649,58 +2582,10 @@
 <script type="text/javascript">!function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);</script>
 <script type="text/javascript" src="https://fera.ro/js/tygh/exceptions.js,qver=4.4.2.pagespeed.jm.15S7L23u6l.js"></script>
 <script type="text/javascript" src="https://fera.ro/js/tygh/product_image_gallery.js,qver=4.4.2.pagespeed.jm.scHHGFYfuC.js"></script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4578',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4565',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4610',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4647',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_38441',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4495',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4598',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_30995',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46478',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46466',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4491',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46470',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_38871',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_37835',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4505',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_30996',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4499',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46481',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_32529',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_34117',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46468',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_45455',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_45453',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46495',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_45510',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46479',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46485',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_32936',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46482',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46472',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46484',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46491',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46475',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_37836',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_48783',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4479',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46487',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46493',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46464',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4724',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46496',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46474',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4552',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_45917',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_4487',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_46471',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_45820',function(frm,elm){fn_2lm_popup_init(frm);});</script>
-<script type="text/javascript">$.ceEvent('on','ce.formpre_product_form_44526',function(frm,elm){fn_2lm_popup_init(frm);});</script>
+
 <script type="text/javascript">(function(_,$){$.ceEvent('one','ce.formajaxpost_step_one_register_form',function(form,elm){if(elm['data']['user_data[register_at_checkout]']!==undefined){var register_at_checkout=elm['data']['user_data[register_at_checkout]'];if(register_at_checkout==='Y'){fbq('track','CompleteRegistration');}}});}(Tygh,Tygh.$));</script>
 <script>$('#id-2lm-elasticsearch').on('click','.class-2lm-elasticsearch-suggest-phrase',function(){$('#search_input').val($(this).text());$('#id-2lm-elasticsearch-form').submit();});$('#id-2lm-elasticsearch').on('click','.class-2lm-elasticsearch-result-expander',function(){var list=$(this).parents('.class-2lm-elasticsearch-suggester');if($(this).hasClass('vs-filter-closed')){$(this).removeClass('vs-filter-closed');$(this).removeClass('ty-icon-right-open-thin');$(this).addClass('ty-icon-down-open vs-filter-open');$(this).addClass('vs-filter-open');list.find('li:gt(0)').slideDown();}else{$(this).removeClass('vs-filter-open');$(this).addClass('vs-filter-closed');$(this).addClass('ty-icon-right-open-thin');$(this).removeClass('ty-icon-down-open vs-filter-open');list.find('li:gt(0)').slideUp();}});</script>
 <script>window.cookieconsent_options={learnMore:null,markup:['<div id="et_cookie_law">','<div class="et_cookie_law_container">','<div class="et_coockie_law-icon ty-center"><i class="vs-icon-cookie"></i></div>','<p class="et_cookie_law_message">FERA.RO folosește Cookies pentru a asigura buna funcționare a website-ului, pentru a personaliza conținutul și reclamele și pentru a analiza datele referitoare la traficul pe website. În plus îi informăm pe partenerii noștri de publicitate și analiză asupra modului în care utilizați website-ul nostru. În cazul în care continuați navigarea pe site vă dați acordul pentru folosirea de cookies.</p>','<div class="et_cookie_law_button_wrapper ty-center"><a data-cc-event="click:dismiss" target="_blank" class="ty-btn ty-btn__tertiary et_cookie_law_button">Acceptare Cookies</a></div>','</div>','</div>']}</script>
-<script>var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/5c8f7f42c37db86fcfce6bf1/default';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script>
 <div id="fb-root"></div>
 </div>
 </div>
