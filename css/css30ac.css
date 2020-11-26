@@ -148,7 +148,7 @@ h2.skinny_heading span {
 #main {
 	padding-top: 30px;
 	padding-bottom: 20px;
-	min-height: 900px;
+	min-height: calc(100vh - -80px - 1px);
 }
 .main_table {
 	border-spacing: 15px;
@@ -320,6 +320,7 @@ h2.skinny_heading span {
 	color: #727272;
 	text-align: center;
 	z-index: -1;
+	background-color: #505050;
 }
 #footer1 .wrapper {
 	position: relative;
