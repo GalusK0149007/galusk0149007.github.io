@@ -88,7 +88,6 @@
 	<script async src="../../../www.google-analytics.com/analytics.js"></script>
 	<script type="text/javascript" src="../../autotrack-master/autotrack.js"></script>
 
-
 <!-- STYLE SHEETS -->
 <link rel="stylesheet" type="text/css" href="../../css/css30ac.css?i=93" />
 <link rel="stylesheet" type="text/css" href="../../css/buttons.css" />
@@ -100,12 +99,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/compare_buttons.css" />
 
 <!-- Schema markup -->
-<script type="application/ld+json">
-{"@type": "Product",
- "image": "https://www.allaboutdogfood.co.uk/images/Products1/560x560/royal-canin-maxi-adult-1.jpg",
- "url": "https://www.allaboutdogfood.co.uk/dog-food-reviews/0062/royal-canin-maxi-adult",
- "name": "Royal Canin Maxi Adult | Nutritional Rating 30%"
-}
+
 </script>
 
 <!-- Slider -->
@@ -129,250 +123,7 @@
 <link rel="stylesheet" type="text/css" href="../../slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="../../slick/slick-theme5661.css?x=2"/>
 
-<script type="text/javascript">
-	
-	google.charts.load('current', {'packages':['gauge']});
-    google.charts.setOnLoadCallback(onLoadDrawCharts);
-	
-	function onLoadDrawCharts() {
-		drawCharts(0);
-	}
-	
-    function drawCharts(v) {
-  	
-    	var nutrientsArray = [[28.3,18.5,1.3,7.2,44.8]];
 
-  		var chartData = new Array ( );
-   	
-    	// array = nutrient, percentage, min, max, greenTo, yellowTo, label
-    	if (nutrientsArray[v][0] > 0) {
-    		nutrientData = new Array ( 'protein', nutrientsArray[v][0], 0, 52, 22, 30, 'Protein' );
-    		chartData.push( nutrientData );
-    	}
-		if (nutrientsArray[v][1] > 0) {
-    		nutrientData = new Array ( 'fat', nutrientsArray[v][1], 0, 28, 10, 18, 'Fat' );
-    		chartData.push( nutrientData );
-    	}
-		if (nutrientsArray[v][2] > 0) {
-
-    		nutrientData = new Array ( 'fibre', nutrientsArray[v][2], 0, 6.5, 2.5, 4, 'Fibre' );
-    		chartData.push( nutrientData );
-    	}
-		if (nutrientsArray[v][3] > 0) {
-    		nutrientData = new Array ( 'ash', nutrientsArray[v][3], 0, 17, 7, 10, 'Ash' );
-    		chartData.push( nutrientData );
-    	}
-		if (nutrientsArray[v][4] > 0) {
-    		nutrientData = new Array ( 'carbs', nutrientsArray[v][4], 0, 50, 20, 30, 'Carbs*' );
-    		chartData.push( nutrientData );
-    	}
-		
-		chartData.forEach( drawChart );
-	}
-		
-	function drawChart( value ) {
-		
-		var data = google.visualization.arrayToDataTable([
-		  ['Label', 'Value'],
-		  [value[6], value[1]]
-		]);
-
-		var options = {
-		  width: 100, height: 100, max: value[3],
-		  greenColor: '#dce9ff', greenFrom: value[2], greenTo: value[4],
-		  yellowColor: '#9ec3ff', yellowFrom: value[4], yellowTo: value[5],
-		  redColor: '#5e9bff', redFrom: value[5], redTo: value[3],
-		  minorTicks: 5
-		};
-		
-		var container = 'chart_div_' + value[0];
-		
-		$( '#' + container ).empty();
-		
-		var chart = new google.visualization.Gauge(document.getElementById(container));
-
-		chart.draw(data, options);	
-	}
-	
-	function goTo(e,link) {
-		if (e.target.nodeName != 'INPUT' && e.target.nodeName != 'LABEL') {
-			document.location.href=link;
-		}
-	}
-
-	function getSliders(complete, weight_in, age_in) {
-		
-		if (complete == 1) {
-			var age_slider = document.getElementById('age_slider');
-
-			noUiSlider.create(age_slider, {
-				start: age_in,
-				behaviour: 'extend-tap',
-				step: 1,
-				range: {
-					'min': [ 1, 1 ],
-					'32%': [ 12, 3 ],
-					'50%': [ 24, 12 ],
-					'max': [ 144, 12 ]
-				},
-				connect: 'lower'
-			});
-
-			var age_out = document.getElementById('age_out');
-			var age_out_unit = document.getElementById('age_out_unit');
-
-			age_slider.noUiSlider.on('update', function( values, handle ) {
-				value=1*values;
-				if (value >= 144) {
-					age_out = '12+';
-					age_out_unit = 'yrs';
-				} else if (value >= 24) {
-					age_out = value / 12;
-					age_out_unit = 'yrs';
-				} else if (value == 1) {
-					age_out = 'Weaning';
-					age_out_unit = '';
-				} else {
-					age_out = value;
-					age_out_unit = 'mos';
-				}
-				$('#age_out').html(age_out);
-				$('#age_out_unit').html(age_out_unit);
-			});
-
-			var weight_slider = document.getElementById('weight_slider');
-
-			noUiSlider.create(weight_slider, {
-				start: weight_in,
-				behaviour: 'extend-tap',
-				step: 1,
-				range: {
-					'min': [ 0.25, 0.25 ],
-					'15%': [ 1, 0.5 ],
-					'30%': [ 3, 1 ],
-					'45%': [ 10, 2 ],
-					'60%': [ 20, 5 ],
-					'85%': [ 60, 10 ],
-					'max': [ 90, 10 ]
-				},
-				connect: 'lower'
-			});
-
-			var weight_out = document.getElementById('weight_out');
-
-			weight_slider.noUiSlider.on('update', function( values, handle ) {
-				value=1*values;
-				if (value < 1) weight_out = value.toFixed(2);
-				else if (value < 3) weight_out = value.toFixed(1);
-				else weight_out = value.toFixed(0);
-				$('#weight_out').html(weight_out);
-			});
-		}
-	}
-
-	function changeSliders(complete) {
-		
-		if (complete == 1) {
-		
-			showPreLoader();
-			$.fancybox.close();
-			var id = 62;
-			var weight = 1*(weight_slider.noUiSlider.get());
-			var age = 1*(age_slider.noUiSlider.get());
-			var tempVarietiesArray = [["Poultry","56.99","15kg bags",null,null,"#\/images\/Products1\/560x560\/royal-canin-maxi-adult-1.jpg","Royal Canin",null,"<a href='\/dog-food-ingredients\/0075\/poultry' class=''>Dehydrated Poultry Protein<\/a>, <a href='\/dog-food-ingredients\/0015\/maize-corn' class=' yellow'>Maize<\/a>, <a href='\/dog-food-ingredients\/0015\/maize-corn' class=' yellow'>Maize Flour<\/a>, <a href='\/dog-food-ingredients\/0013\/unspecified-animal-fats-and-oils' class=' yellow'>Animal Fats<\/a>, <a href='\/dog-food-ingredients\/0037\/wheat' class=' red'>Wheat<\/a>, <a href='\/dog-food-ingredients\/0003\/rice-white' class=''>Rice<\/a>, <a href='\/dog-food-ingredients\/0063\/digest-hydrolysed-animal-proteins' class=''>Hydrolysed Animal Proteins<\/a>, <a href='\/dog-food-ingredients\/0064\/maize-gluten' class=' yellow'>Maize Gluten<\/a>, <a href='\/dog-food-ingredients\/0034\/sugar-beet' class=''>Beet Pulp<\/a>, <a href='\/dog-food-ingredients\/0039\/vitamins-and-minerals' class=''>Minerals<\/a>, <a href='\/dog-food-ingredients\/0022\/fish-oil' class=''>Fish Oil<\/a>, <a href='\/dog-food-ingredients\/0083\/soybean-oil' class=''>Soya Oil<\/a>, <a href='\/dog-food-ingredients\/0010\/brewers-yeast' class=''>Yeasts<\/a> and Parts Thereof, <a href='\/dog-food-ingredients\/0108\/crustaceans' class=''>Hydrolysed Crustaceans<\/a>, Hydrolysed Cartilage, <a href='\/dog-food-ingredients\/0043\/artificial-preservatives-and-antioxidants' class=' red'>Antioxidants<\/a>.","<a Href='\/dog-Feeding-Guide#ash'>Crude Ash<\/a>: 6.6%. <A Href='\/dog-Feeding-Guide#fibre'>Crude Fibre<\/a>: 1.2%. Crude <A Href='\/dog-Feeding-Guide#fat'>Oil<\/a> <A Href='\/dog-Feeding-Guide#fat'>Fats<\/a>: 17%. <A Href='\/dog-Feeding-Guide#protein'>Protein<\/a>: 26%.","Vitamin A: 16000 IU, Vitamin D3: 1000 IU, E1 (iron): 35 mg, E2 (iodine): 3.5 mg, E4 (copper): 11 mg, E5 (manganese): 45 mg, E6 (zinc): 129 mg, E8 (selenium): 0.05 mg.","<p>\" <i>The nutritional requirements of a larger breed dog versus a smaller breed dog vary greatly, therefore it is essential you feed a balanced diet according to size and other particular sensitivities. ROYAL CANIN\u00ae Maxi Adult food is specially formulated with your dog\u2019s nutritional needs in mind. This food is suitable for large dogs aged 15 months and over \u2013 with an adult weight ranging between 26-44kg. For large dogs, bones and joints can be a particular sensitivity, therefore maintaining your dog\u2019s joint health is crucial for the wear and tear it may face due to its size. ROYAL CANIN\u00ae Maxi Adult food will help maintain an ideal weight that your dog can comfortably support. ROYAL CANIN\u00ae Maxi dog food contains an exclusive formula to help maintain your dog\u2019s digestive health. What\u2019s more, it\u2019s enriched with omega-3 fatty acids (EPA and DHA), ROYAL CANIN\u00ae Maxi adult dog food also helps to support and maintain your dog\u2019s skin by keeping it healthy and nourished.<\/i> \"<\/p>","397.0","15000","56.99","15kg bags = &pound;56.99",1]];
-			var variety = $('#variety').val();
-			var rrp = tempVarietiesArray[variety][1];
-			var size = tempVarietiesArray[variety][13];
-			dataObj = {'id': id, 'weight': weight, 'age': age, 'rrp': rrp, 'size': size};
-
-			$.ajax
-			({
-				type: "POST",
-				url: "/_review_change_sliders.php",
-				data: dataObj,
-				dataType: 'json',
-				cache: false,
-				success: function(data)
-				{
-					if(data.error != null) {
-						alert(data.error);
-					} else {
-						$(".price_per_day").html(data.price);
-						$(".grams_per_day").html(data.grams);
-					}
-				}
-			});
-
-			hidePreLoader();
-		}
-	}
-
-	$(function(){ //on load functions
-		
-		getSliders('1', '14', '38');
-		changeSliders('1');
-		tooltipSetup();
-		getCompare('foods');
-		hidePreLoader();
-		
-		$('.image_carousel').slick({
-	  		dots: false	  	});
-
-	  	var unsuitableVarieties = 0;
-		if (unsuitableVarieties > 0) {
-			if (unsuitableVarieties == 1) {
-				var msg = 'One variety of this food has been omitted as it does not meet one or more of your search criteria';
-			} else {
-				var msg = unsuitableVarieties + ' varieties of this food have been omitted as they do not meet one or more of your search criteria';
-			}
-			setTimeout(function() { alert(msg); }, 1000);
-		}
-
-		if ($('#company_info_table').height() > 500) {
-			$( "#company_info_container" ).addClass( "company_info_less" );
-		} else {
-			$( "#see_more_company_info" ).addClass( "hidden" );
-		}
-
-		$('#see_more_company_info').click(function(){
-			$( ".show_hide" ).toggleClass( "hidden" );
-			if ($('#company_info_container').height() == 300) {
-				$('#manufacturers_description').css('padding-bottom', '35px');
-				$('.company_info_less').css('min-height', $('#company_info_table').height()+'px');
-				$('.company_info_less').addClass('gone');
-			} else {
-				$('#manufacturers_description').css('padding-bottom', '0.5em');
-				$('.company_info_less').css('min-height', '300px');
-				$('.company_info_less').removeClass('gone');
-			}
-		});
-
-		$('.image_carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			//showPreLoader();
-			var variety = nextSlide;
-			var complete = 1;
-			var tempVarietiesArray = [["Poultry","56.99","15kg bags",null,null,"#\/images\/Products1\/560x560\/royal-canin-maxi-adult-1.jpg","Royal Canin",null,"<a href='\/dog-food-ingredients\/0075\/poultry' class=''>Dehydrated Poultry Protein<\/a>, <a href='\/dog-food-ingredients\/0015\/maize-corn' class=' yellow'>Maize<\/a>, <a href='\/dog-food-ingredients\/0015\/maize-corn' class=' yellow'>Maize Flour<\/a>, <a href='\/dog-food-ingredients\/0013\/unspecified-animal-fats-and-oils' class=' yellow'>Animal Fats<\/a>, <a href='\/dog-food-ingredients\/0037\/wheat' class=' red'>Wheat<\/a>, <a href='\/dog-food-ingredients\/0003\/rice-white' class=''>Rice<\/a>, <a href='\/dog-food-ingredients\/0063\/digest-hydrolysed-animal-proteins' class=''>Hydrolysed Animal Proteins<\/a>, <a href='\/dog-food-ingredients\/0064\/maize-gluten' class=' yellow'>Maize Gluten<\/a>, <a href='\/dog-food-ingredients\/0034\/sugar-beet' class=''>Beet Pulp<\/a>, <a href='\/dog-food-ingredients\/0039\/vitamins-and-minerals' class=''>Minerals<\/a>, <a href='\/dog-food-ingredients\/0022\/fish-oil' class=''>Fish Oil<\/a>, <a href='\/dog-food-ingredients\/0083\/soybean-oil' class=''>Soya Oil<\/a>, <a href='\/dog-food-ingredients\/0010\/brewers-yeast' class=''>Yeasts<\/a> and Parts Thereof, <a href='\/dog-food-ingredients\/0108\/crustaceans' class=''>Hydrolysed Crustaceans<\/a>, Hydrolysed Cartilage, <a href='\/dog-food-ingredients\/0043\/artificial-preservatives-and-antioxidants' class=' red'>Antioxidants<\/a>.","<a Href='\/dog-Feeding-Guide#ash'>Crude Ash<\/a>: 6.6%. <A Href='\/dog-Feeding-Guide#fibre'>Crude Fibre<\/a>: 1.2%. Crude <A Href='\/dog-Feeding-Guide#fat'>Oil<\/a> <A Href='\/dog-Feeding-Guide#fat'>Fats<\/a>: 17%. <A Href='\/dog-Feeding-Guide#protein'>Protein<\/a>: 26%.","Vitamin A: 16000 IU, Vitamin D3: 1000 IU, E1 (iron): 35 mg, E2 (iodine): 3.5 mg, E4 (copper): 11 mg, E5 (manganese): 45 mg, E6 (zinc): 129 mg, E8 (selenium): 0.05 mg.","<p>\" <i>The nutritional requirements of a larger breed dog versus a smaller breed dog vary greatly, therefore it is essential you feed a balanced diet according to size and other particular sensitivities. ROYAL CANIN\u00ae Maxi Adult food is specially formulated with your dog\u2019s nutritional needs in mind. This food is suitable for large dogs aged 15 months and over \u2013 with an adult weight ranging between 26-44kg. For large dogs, bones and joints can be a particular sensitivity, therefore maintaining your dog\u2019s joint health is crucial for the wear and tear it may face due to its size. ROYAL CANIN\u00ae Maxi Adult food will help maintain an ideal weight that your dog can comfortably support. ROYAL CANIN\u00ae Maxi dog food contains an exclusive formula to help maintain your dog\u2019s digestive health. What\u2019s more, it\u2019s enriched with omega-3 fatty acids (EPA and DHA), ROYAL CANIN\u00ae Maxi adult dog food also helps to support and maintain your dog\u2019s skin by keeping it healthy and nourished.<\/i> \"<\/p>","397.0","15000","56.99","15kg bags = &pound;56.99",1]];
-			$('#variety').val(variety);
-			$('.ingredients').html(tempVarietiesArray[variety][8]);
-			$('.analysis').html(tempVarietiesArray[variety][9]);
-			$('.nutritional_additives').html(tempVarietiesArray[variety][10]);
-			$('.energy').html(tempVarietiesArray[variety][12]);
-			$('.manufacturers_description').html(tempVarietiesArray[variety][11]);
-			$('.rrp').html(tempVarietiesArray[variety][1]);
-			$('.buy_online_button').html(tempVarietiesArray[variety][4]);
-			if (complete == 1) {
-				$('.rrp_print').html(tempVarietiesArray[variety][15]);
-				changeSliders('1');
-			}
-			
-			drawCharts(variety);
-
-			hidePreLoader();
-		});
-
-	});
-
-</script>
 
 <style type="text/css">
 	pret {
@@ -385,7 +136,7 @@
 		color: #fff;
 		position: absolute;
 		right: 0px;
-		bottom: 150px;
+		bottom: 110px;
 		height: 65px;
 		width: 100%;
 		white-space: nowrap;
@@ -656,7 +407,7 @@
     	height: 48px;
 		position:relative;
 		left: 0px;
-	    top: 80px;
+	    top: 50px;
 		margin-bottom: 1px;
 	}
 	.buy_online_button {
@@ -848,6 +599,7 @@
 	<input type="hidden" id="variety" name="variety" value="0" />
 
 	<!-- Preloader -->
+
 		<div id="header-container">
 		<div id="header">
 			<div class="wrapper">
@@ -856,7 +608,7 @@
 					<tr>
 
 						<td style="width: 278px;">
-							<a id="logo" title="All About Dog Food" href="../../index.html"></a>
+							<a id="logo" title="Totuldesprecaini" href="../../index.html"></a>
 						</td>
 
 						<td>
@@ -867,6 +619,8 @@
 
 						<td style="width: 246px; position: relative;" valign="top">
 							<div id="account">
+
+
 							</div>
 						</td>
 
@@ -905,7 +659,7 @@
 							<li><a href="../../dog-food-ingredient-glossary.html">Ingrediente</a></li>
 							<li><a href="../../dog-food-terms-glossary.html">Despre hrana</a></li>
 							<li><a href="../../frequently-asked-questions.html">Intrebari</a></li>
-							<li><a href="../../article-library.html">Despre catei</a></li>
+
 						</ul>
 
 					</li>
@@ -949,7 +703,7 @@
 						<table id="top_box" class="full_width" cellpadding='0' cellspacing='0' border="0">
 							<tr>
 															<td align="left" id="updated">
-									Actualizat 14 Noiembrie 2020							</td>
+									Actualizat 21 Noiembrie 2020								</td>
 								<td align="right" width="50%" style="padding-right: 7px;">
 								</td>
 							</tr>
@@ -961,20 +715,23 @@
 	<div class="shadowed" style="position: relative;">
 
 			<a data-fancybox data-src="#lightbox_11" href="javascript:;"><div class="flag_corner" style="background-image: url('../../images/flags_large/france_l9d34.png?x=5');"></div></a>
+	
+		<table id="review_tabs" cellpadding='0' cellspacing='0' border="0">
+		</table>
 
 		<table class="full_width whitebox no_shadow" cellpadding='0' cellspacing='0' border="0">
 			<tr>
-				<td style="padding: 20px 1% 15px 3%;">
+				<td style="padding: 20px 1% 20px 3%;">
 
 					<table style="width: 100%;">
 						<tr>
 							<td style="width: 27%; padding-top: 24px;" valign="top">
 
 								<div class="image_carousel">
-								<div><div style="background-image: url('../../images/Products1/560x560/royal-canin-medium-puppy-1.jpg');" class="reviewpic"  alt="Royal Canin Maxi Adult" title="Image courtesy of Royal Canin"></div><h3>Gaina</h3></div>								</div>
+								<div><div style="background-image: url('../../images/Products1/560x560/royal-canin-medium-puppy-1.jpg');" class="reviewpic"  alt="Royal Canin Maxi Puppy" title="Image courtesy of Royal Canin"></div></div>								</div>
 
 							</td>
-
+<!-- aici incepe descrierea -->
 							<td valign="top" style="padding-top: 6px;">
 
 																	<span class="logo_container">
@@ -987,14 +744,14 @@
 									<tr>
 										<td style="width: 30px;"><p><b>Tipul de hrana </b></p></td>
 										<td style="width: 150px;">
-											<p> Uscata <span class='info_container'><a href='../../articles/types-of-dog-food-so-much-more-than-tins-and-biscuits.html#anchor_mobile_extruded' target='_blank' class='info'></a></span></p>
+											<p> Uscata</p>
 										</td>
 									</tr>
 									<tr>
-										<td><p><b>Pentru caini</b></p></td>
+										<td><p><b>Marimi</b></p></td>
 										<td>
 											<p>
-											de casa/curte											</p>
+											M<span class='info_container'><a target='_blank' class='info' title="Greutatea ca adult 10-25kg"></a></span>											</p>
 										</td>
 									</tr>
 									<tr>
@@ -1010,30 +767,26 @@
 									</tr>
 																	<tr>
 										<td><p><b>Pret pe kg</b></p></td>
-										<td><p class='rrp_print'>1kg = 12lei</p></td>
+										<td><p class='rrp_print'>1kg = 17lei</p></td>
 									</tr>															
-									<tr>
 
-										<td colspan='2'><p><b>Marimi</b></p></td></tr><tr><td colspan='2' class='center_align_container'><div class='breeds_container'><span class='tooltip'><div class='breeds breeds_toy breeds_off'></div><span style='background-color: #cbcbcb;'><div style='color: red; font-size: 1.5em;'>&#10008;</div> <b>NU este recomandat cateiilor de talie foarte mica</b><br />Greutatea ca adult 1-4kg <br>ex: Chihuahua, Pomeranian, Yorkshire Terrier</span></span><span class='tooltip'><div class='breeds breeds_small breeds_off'></div><span style='background-color: #cbcbcb;'><div style='color: red; font-size: 1.5em;'>&#10008;</div> <b>NU este recomandat cateiilor de talie mica</b><br />Greutatea ca adult 4-10kg <br>ex:Beagle, Dachshund, Jack Russell</span></span><span class='tooltip'><div class='breeds breeds_medium'></div><span style='background-color: #474747; color: #fff;'><div style='color: #2dd300; font-size: 1.5em;'>&#10004;</div> <b>Recomandat cateiilor de talie medie</b><br />Greutatea ca adult 10-25kg <br>ex: Border Collie, Staffie, Springer, Vizsla</span></span><span class='tooltip'><div class='breeds breeds_large breeds_off'></div><span style='background-color: #cbcbcb;'><div style='color: red; font-size: 1.5em;'>&#10008;</div> <b>Nu este recomandat cateilor de talie mare</b><br />Greutatea ca adult 25-45kg <br>ex: Boxer, Labrador, Greyhound</span></span><span class='tooltip'><div class='breeds breeds_giant breeds_off'></div><span style='background-color: #cbcbcb;'><div style='color: red; font-size: 1.5em;'>&#10008;</div> <b>NU este recomandat cateiilor de talie foarte mare</b><br />Greutatea ca adult 45kg+ <br>ex: Bernese, Great Dane, Mastiff</span></span></div></td>
-									</tr>
-																
 								</table>
 
-						</td>
+							</td>
 
 							<td valign="top" style="width: 23%; position: relative;">
 
 								<div class="review_panel">
 
-									<div class="panel_rating" style="background-color: hsl(34, 100%, 43%);  overflow: visible; white-space: nowrap;">
-										<p style="color: white;"><b>Recomandat</b></p>
-										<span class="rating_reading"><span style="font-size: 1.2em;">34</span><span style="font-size: 0.8em;">%</span></span>
+									<div class="panel_rating" style="background-color: hsl(30, 100%, 43%);  overflow: visible; white-space: nowrap;">
+										<h3 style="color: white; font-size: 2em; position: relative; right: 10px;"><b>Nota</b></h3>
+										<span class="rating_reading"><span style="font-size: 2.2em; position: relative; bottom: 18px; right: 5px;">3</span>
 									</div>
 		                          
 			                           <p>Pret pe 15kg</p>
 									   <pret>264,08 RON</pret>
 								</div>
-                                <div class="buy_buttons buy_locally_button" onclick="window.location.href='https://hrana-pentru-caini.compari.ro/royal-canin/puppy-medium-15kg-p411494193/';">Cumpara</div>
+                                <div class="buy_buttons buy_locally_button" onclick="window.location.href='https://hrana-pentru-caini.compari.ro/royal-canin/maxi-adult-15kg-p54553305/';">Cumpara</div>
 							</td>
 						</tr>
 					</table>
@@ -1042,7 +795,7 @@
 			</tr>
 		</table>
 	</div>
-
+<!-- Aici se termina descrierea -->
 	<div id="nutrition_anchor"></div>
 
 	<table id="review_nutrition_table" class="full_width whitebox" cellpadding='0' cellspacing='0' border="0">
@@ -1065,14 +818,14 @@
 								</tr>
 								<tr>
 									<td align="left" class="body_cell" valign="top">
-										<p class='ingredients'><a href='../../dog-food-ingredients/0075/poultry.html' class=''>Proteine deshidratate de pasare</a>, <a href='../../dog-food-ingredients/0015/maize-corn.html' class=' yellow'>Porumb</a>, <a href='../../dog-food-ingredients/0013/unspecified-animal-fats-and-oils.html' class=' yellow'>Grasimi animale</a>, <a href='../../dog-food-ingredients/0034/sugar-beet.html' class=''>Pulpa de sfecla</a>, <a href='../../dog-food-ingredients/0093/vegetable-protein-extracts.html' class=' red'>Izolat de proteine vegetale</a>, <a href='../../dog-food-ingredients/0064/maize-gluten.html' class=' yellow'>Gluten de porumb</a>, Dezhidratat <a href='../../dog-food-ingredients/0085/pork.html' class=''>Porc</a> Proteina, <a href='../../dog-food-ingredients/0003/rice-white.html' class=''>Orez</a>, <a href='../../dog-food-ingredients/0037/wheat.html' class=' red'>Faina de grau</a>, <a href='../../dog-food-ingredients/0063/digest-hydrolysed-animal-proteins.html' class=''>Proteine animale hidrolizate</a>, <a href='../../dog-food-ingredients/0037/wheat.html' class=' red'>Grau</a>, <a href='../../dog-food-ingredients/0015/maize-corn.html' class=' yellow'>Faina de porumb</a>, <a href='../../dog-food-ingredients/0039/vitamins-and-minerals.html' class=''>Mineralse</a>, <a href='../../dog-food-ingredients/0022/fish-oil.html' class=''>Ulei de peste</a>, <a href='../../dog-food-ingredients/0083/soybean-oil.html' class=''>Ulei de soya</a>, <a href='../../dog-food-ingredients/0010/brewers-yeast.html' class=''>Drojdii</a> si derivate, <a href='../../dog-food-ingredients/0041/fos.html' class=''>Fructo-Oligo-Zaharide</a> (0, 34%), Hidrolizate <a href='../../dog-food-ingredients/0010/brewers-yeast.html' class=''>Drojdie</a>, <a href='../../dog-food-ingredients/0010/brewers-yeast.html' class=''>Drojdii</a> Extracte, Extract de galbenele, <a href='../../dog-food-ingredients/0043/artificial-preservatives-and-antioxidants.html' class=' red'>Antioxidanti</a>.</p>
+										<p>proteine de pasăre (uscate), grăsimi de origine animală, porumb, izolat de proteine vegetale*, pulpă uscată de sfeclă, făină integrală de grâu, orez, proteină de origine animală (hidrolizată), grâu, făină de porumb, ulei de pește, drojdie, ulei de soia, minerale, fructo-oligo-zaharide (0,34 %), hidrolizat de drojdie (sursă de manan-oligozaharide), extract de drojdie (sursă de beta-glucani), făină din petale de crăițe (sursă de luteină).</p>
 
 										
 									</td>
 								</tr>
 							</table>
-
-															<table class='full_width' cellpadding='0' cellspacing='0' border='0' style='margin: 20px 0px;'><tr><td align='left' class='heading_cell'>Energie calorica<td></tr><tr><td align='left' class='body_cell' valign='top'><p><span class='energy'>393.0</span> kcal/100g</p></td></tr></table>
+							
+                                          <table class='full_width' cellpadding='0' cellspacing='0' border='0' style='margin: 20px 0px;'><tr><td align='left' class='heading_cell'>Energie calorica<td></tr><tr><td align='left' class='body_cell' valign='top'><p><span class='energy'>376.0</span> kcal/100g</p></td></tr></table>
 							
 						</td>
 						<td class="two_col two_col_r" valign="top">
@@ -1085,7 +838,11 @@
 								</tr>
 								<tr>
 									<td align="left" class="body_cell" valign="top">
-										<p class='analysis'><a Href='../../dog-Feeding-Guide-2.html#ash'>Cenusa bruta</a>: 8%. <A Href='../../dog-Feeding-Guide-2.html#fibre'>C</a>: 1.7% Fibra bruta <A Href='../../dog-Feeding-Guide-2.html#fat'>Ulei</a> <A Href='../../dog-Feeding-Guide-2.html#fat'>Grasimi</a>: 20%. <A Href='../../dog-Feeding-Guide-2.html#protein'>Proteine</a>: 32%.</p>
+										<p>
+proteine	32.0 %
+grăsime	20.0 %
+fibre	1.6 %
+cenuşă	7.9 %</p>
 									</td>
 								</tr>
 							</table>
@@ -1094,12 +851,12 @@
 							<table class="full_width" cellpadding='0' cellspacing='0' border="0" style='margin: 20px 0px;'>
 								<tr>
 									<td align="left" class="heading_cell">
-										Aditivi nutriționali <span style='font-size: 0.75em;'>(pe kg)</span>
+										Aditivi nutritionali <span style='font-size: 0.75em;'>(pe kg)</span>
 									</td>
 								</tr>
 								<tr>
 									<td align="left" class="body_cell" valign="top">
-										<p class='nutritional_additives'>Vitamina A: 16000 IU, Vitamina D3: 1000 IU, Vitamina E: 520 mg, E1 (fier): 45 mg, E2 (iod): 4,5 mg, E4 (cupru): 14 mg, E5 (mangneziu): 59 mg, E6 (zinc): 123 mg, E8 (selenium): 0,08 mg - Aditivi tehnologici: Clinoptilolit de origine sedimentara: 10 G - Aditivi senzoriali:extract de yucca: 125 mg.</p>
+										<p>vitamina A (16.000 UI/kg), vitamina D3 (1.000 UI/kg), vitamina E (520 mg/kg), E1 [fier] (45 mg/kg), E2 [iod] (4,5 mg/kg), E4 [cupru] (14 mg/kg), E5 [mangan] (59 mg/kg], E6 [zinc] (123 mg/kg), E8 [seleniu] (0,08 mg/kg).</p>
 									</td>
 								</tr>
 							</table>
@@ -1109,20 +866,11 @@
 					</tr>
 				</table>
 
-				
-				<table class="review_content" cellpadding='0' cellspacing='0' border="0" style="margin-top: 24px;">
-					<tr>	
-						</td>
-					</tr>
-				</table>
-
-				
-
 			</td>
 		</tr>
 	</table>
 
-<div id="company_anchor"></div>
+	<div id="company_anchor"></div>
 
 	<table id="review_company_table" class="full_width whitebox" cellpadding='0' cellspacing='0' border="0">
 		<tr>
@@ -1145,6 +893,8 @@
 				<div class="dotted-line"></div>
 
 				<div id="company_info_container">
+
+					
 					<table id="company_info_table" class="review_content" cellpadding='0' cellspacing='0' border="0">
 						<tr>
 							<td class="two_col two_col_l" valign="top">
@@ -1197,7 +947,6 @@
 													</td>
 												</tr>
 											
-											
 											</table>
 										</td>
 									</tr>
@@ -1214,7 +963,7 @@
 									</tr>
 									<tr>
 										<td align="left" id="manufacturers_description" class="body_cell" valign="top" style="padding-top: 1em;">
-											<span class='manufacturers_description'><p>"Satisfac nevoile ridicate de energie ale puiilor medii în timpul perioadei lor scurte de creștere. Formula foarte digerabilă și sistemul imunitar susținut cu complex de antioxidanți. O formulă specifică cu surse de proteine ​​selectate de foarte înaltă calitate pentru a susține sănătatea pielii. Formulată nutrițional cu omega 3 și 6 acizi grași, inclusiv GLA, EPA și DHA pentru a sprijini sănătatea și starea pielii. * Studiu intern Royal Canin 2018. Puteți ajuta la protejarea pielii câinelui păstrându-i curat patul și locurile de odihnă preferate. Acest lucru ajută la îndepărtarea prafului și a mătreții, o reproducere sol pentru paraziți."</p></span>
+											<span class='manufacturers_description'><p>" <i>Satisfac nevoile ridicate de energie ale puiilor medii în timpul perioadei lor scurte de creștere. Formula foarte digerabilă și sistemul imunitar susținut cu complex de antioxidanți. O formulă specifică cu surse de proteine ​​selectate de foarte înaltă calitate pentru a susține sănătatea pielii. Formulată nutrițional cu omega 3 și 6 acizi grași, inclusiv GLA, EPA și DHA pentru a sprijini sănătatea și starea pielii. * Studiu intern Royal Canin 2018. Puteți ajuta la protejarea pielii câinelui păstrându-i curat patul și locurile de odihnă preferate. Acest lucru ajută la îndepărtarea prafului și a mătreții, o reproducere sol pentru paraziți.</i> "</p></span>
 										</td>
 									</tr>
 								</table>
@@ -1234,165 +983,8 @@
 </table>
 </div>
 
-<!-- LIGHT BOXES -->
-<!-- Dog sizes -->
-<div class="lightbox" id="lightbox_1">
-	
-	<span class='lightbox_small_text'>
-		<p>This food is suitable for the following breed sizes:</p>
-		<table>
-				</table>
-	</span>
+<div id="compare_div"></div>
 
-	
-</div>
-
-<!-- White label -->
-<div class="lightbox" id="lightbox_2">
-	<b>Private label</b> (or <b>white label</b>) pet foods are pre-formulated recipes that companies can order from certain factories, add their own label or packaging and retail to the public as their own brand. They are therefore available from numerous suppliers.<br /><a href='../../dog-food-terms/0012/private-label-white-label.html' alt='Private / White label pet foods'>Click here for more info</a>.
-</div>
-
-<!-- Dry weight nutrients -->
-<div class="lightbox" id="lightbox_3">
-	<p>In general, unless your dog has health issues, you probably won't have to worry about these figures. <a href='../../frequently-asked-questions.html#dials'>Click here for more information</a></p>
-</div>
-
-<!-- Buy -->
-<div class="lightbox" id="lightbox_4">
-	<div class='mobile_button_container'>
-	
-					<p  class="buy_button_label">Buy locally:</p>
-				<div class="buy_buttons buy_locally_button" onclick="document.location.href='../../store-finder4b5e.html?p_id=17';">Store finder</div>
-
-			</div>
-</div>
-
-<!-- Ingredients list -->
-<div class="lightbox" id="lightbox_5">
-	<p>The ingredients list as printed on the packaging or company website.</p><p>Ingredients that we believe to be controversial or inferior are highlighted in <span class='yellow'>yellow</span> with particularly low grade, highly contentious or excessively vague ingredients in <span class='red'>red</span>.</p><p>Information in <i>italics</i> is not usually avaialble on the ingredients list but has been provided to us by the manufacturer to help with our ratings.</p>
-</div>
-
-<!-- Dry weight nutrients -->
-<div class="lightbox" id="lightbox_6">
-	<p>The <b>dry matter level</b> of a nutrient is the percentage there would be in the food if all of the water was removed.</p>
-	<p>With water taken out of the equation, these figures allow the nutrient levels of foods of different types (like wet and dry) to be compared on an even playing field.</p>
-	<p><a href='../../frequently-asked-questions.html#dials'>Click here for more information</a></p>
-</div>
-
-<!-- Breed sizes -->
-<div class="lightbox" id="lightbox_7">
-	In general, unless your dog has health issues, you probably won't have to worry about these figures. <a href='../../frequently-asked-questions.html#dials'>Click here for more information</a>
-</div>
-
-<!-- Profile -->
-<div class="lightbox lightbox_profile" id="lightbox_8a" style="background-color: #2dd300;">
-	<p><b>Natural</b></p>
-	<p>This food does not contain any added artificial preservatives, antioxidants, colourings, flavourings or other controversial synthetic ingredients. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8b" style="background-color: #a9a9a9;">
-	<p><b>Not natural</b></p>
-	<p>This food contains some added artificial preservatives, antioxidants, colourings, flavourings and/or other controversial synthetic ingredients. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<div class="lightbox lightbox_profile" id="lightbox_8c" style="background-color: #ec1821;">
-	<p><b>High meat content</b></p>
-	<p>This food contains at least 30% meat ingredients on a dry matter basis (once all of the food's water has been taken out of the equation). For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8d" style="background-color: #a9a9a9;">
-	<p><b>Not high in meat</b></p>
-	<p>This food contains less than 30% meat ingredients on a dry matter basis (once all of the food's water has been taken out of the equation). For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<div class="lightbox lightbox_profile" id="lightbox_8e" style="background-color: #00c2a1;">
-	<p><b>Hypoallergenic</b></p>
-	<p>This food is free from all ingredients that are regularly linked by veterinarians to food allergies and/or intolerance in dogs like wheat, maize, dairy products, soya products and artificial additives. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8f" style="background-color: #a9a9a9;">
-	<p><b>Not hypoallergenic</b></p>
-	<p>This food contains one or more ingredients that are regularly linked by veterinarians to food allergies and/or intolerance in dogs or uses ambiguous terms making it impossible to rule their presence out. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<div class="lightbox lightbox_profile" id="lightbox_8g" style="background-color: #fb6e13;">
-	<p><b>Grain free</b></p>
-	<p>This food is free from all cereals including wheat, rice, maize, barley and oats. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8h" style="background-color: #a9a9a9;">
-	<p><b>Not grain free</b></p>
-	<p>This food contains one or more cereals or has an ingredient list that is too unclear to rule out cereal content. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<div class="lightbox lightbox_profile" id="lightbox_8i" style="background-color: #17aaff;">
-	<p><b>Clearly labelled</b></p>
-	<p>Each ingredient is clearly and individually stated and there is at least a reasonable indication of the percentages of the main ingredients. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8j" style="background-color: #a9a9a9;">
-	<p><b>Not clearly labelled</b></p>
-	<p>It is difficult to tell exactly what is in this food due to a lack of labelling clarity. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<div class="lightbox lightbox_profile" id="lightbox_8k" style="background-color: #0071c2;">
-	<p><b>Certified nutritionally complete</b></p>
-	<p>This food complies fully with the complete food nutrient tolerances as recommended by FEDIAF and/or AAFCO. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-<div class="lightbox lightbox_profile" id="lightbox_8l" style="background-color: #a9a9a9;">
-	<p><b>Not certified nutritionally complete</b></p>
-	<p>This food does not comply fully with the complete food nutrient tolerances as recommended by FEDIAF and/or AAFCO. For more information on our logos <a href="../../frequently-asked-questions.html#profile" target="_blank">tap here</a></p>
-</div>
-
-<!-- Price per day -->
-<div class="lightbox" id="lightbox_9">
-	The <b>price per day</b> of feeding this food based on feeding the manufacturer's recommended daily amount from 15kg bags bought at their rrp to a dog of:
-
-	<table style="margin: 28px auto 20px; width: 70%;">
-		<tr>
-			<td valign="middle" style="padding-bottom: 13px;">
-				<div class='slider' id='weight_slider' style="width: 100%;"></div>
-			</td>
-			<td valign="middle" align="right"  style="width: 39px; padding-bottom: 13px; padding-right: 2px;">
-				<b><div id="weight_out"></div></b>
-			</td>
-			<td valign="middle"  style="width: 30px; padding-bottom: 13px;">
-				<b><div>kg</div></b>
-			</td>
-		</tr>
-		<tr>
-			<td valign="middle">
-				<div class='slider' id='age_slider' style="width: 100%;"></div>
-			</td>
-			<td valign="middle" align="right" style="padding-right: 2px; overflow: visible; max-width: 25px; padding-left: 5px;">
-				<b><div id="age_out"></div></b>
-			</td>
-			<td valign="middle">
-				<b><div id="age_out_unit"></div></b>
-			</td>
-		</tr>
-	</table>
-
-	<div>
-		<div id="slider_go" class="button button_small" onclick="changeSliders('1');"  style="margin: 24px auto; display: block; width: 80px;">Go!</div>
-	</div>
-
-	<b>Note:</b> All suggested feeding amounts and costs are only approximate and may vary considerably from dog to dog. Be sure to contact the manufacturer if in any doubt.
-</div>
-
-<!-- Nutritional rating -->
-<div class="lightbox lightbox_profile" id="lightbox_10" style="background-color: hsl(36, 100%, 43%);">
-
-	
-			<p><b>30 out of 100</b>&nbsp;&nbsp;-&nbsp;&nbsp;Poor</p>
-		<p>Our unique nutritional ratings are calculated based on a number of characteristics including the quality and quantity of the stated ingredients, certain nutritional and technological additives and the processing methods used to create the food.  They are designed to indicate how healthy a food is likely to be for the majority of dogs when fed on a daily basis for an extended period. <a href='../../frequently-asked-questions.html#ratings'>Click here for more information</a></p>
-	</div>
-
-<!-- Country of origin -->
-<div class="lightbox " id="lightbox_11">
-	<p><b>Country of origin:</b> France</p>
-</div>
-
-<!-- END LIGHT BOXES -->
-
-<script id="dsq-count-scr" src="../../../whichdogfood.disqus.com/count.js" async></script>
-
-<script type="text/javascript" src="../../slick/slick.min.js"></script>
 
 		</div>
 					
@@ -1408,4 +1000,3 @@
 	</div>
 </body>
 </html>
-
