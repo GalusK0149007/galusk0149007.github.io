@@ -297,3 +297,15 @@ p, span, form {
     right: -2px;
     z-index: 1011;
 }
+#contact1 {
+    background-image: url(../images/article-images/dog-line-up.jpg);
+    background-size: 650px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 650px;
+    height: 300px;
+    position: absolute;
+    top: 240px;
+    right: 120px;
+    z-index: 1;
+}
