@@ -24,6 +24,13 @@
 	background-repeat: no-repeat;
 	background-position: -55px -20px;
 }
+#product_box_1 {
+	position: relative;
+	width: 200px;
+	height: 250px;
+	background: #FFFFFF;
+	left: 5px;
+} 
 #dresaj {
 	position: relative;
 	width: 100%;
