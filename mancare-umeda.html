@@ -36,7 +36,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title>Ingrediente</title>
+	<title>Totuldesprecaini.com</title>
 	<!-- General Meta Tags -->
 	<meta name="Description" content="Cel mai bun site despre caini din Romania!">
 	<!-- Facebook -->
@@ -76,7 +76,7 @@
 	<link rel="apple-touch-icon-precomposed" href="images/icons/icon_32.png" />
 
 	<style type="text/css">
-		#topnav > li > #treat {
+		#topnav > li > #food {
 			background: #3385A8;
 		}
 	</style>
@@ -113,6 +113,33 @@
 	
 
 <style type="text/css">
+        /* width */
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+       /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+		background: #fff;
+    }
+
+        /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #3385A8;
+        border-radius: 10px;
+    }
+	h9 {
+		font-size: 0.7em;
+		color: #fff;
+		position: relative;
+        top: 5px;
+        right: 30;
+        width: 150px;
+        height: 55px;
+		text-align: center;
+    }
 	h2 {
 		font-size: 1.7em;
 		color: #000;
@@ -132,7 +159,7 @@
 	}
   	.fb_iframe_widget {
     	margin: 0px auto;
-    	display: table !important;
+    	display: table !important
     }
     img.dsq-widget-avatar {
     	padding: 0px !important;
@@ -222,6 +249,17 @@
     .whitebox > tbody > tr > td {
 		padding: 25px 8%;
 	}
+	.whitebox {
+	background-color: #fff;
+	margin-bottom: 15px;
+	width: 100%;
+	height: 590px;
+	position: relative;
+	cursor: pointer;
+	-webkit-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	-moz-box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+	box-shadow: 1px 1px 4px 0px rgba(61, 61, 61, 0.4);
+}
 	.review_panel {
 		width: 104%;
 		height: 153px;
@@ -257,6 +295,13 @@
 		display: block;
 		margin-bottom: -36px;
 	}
+	@font-face {
+        font-family: myFirstFont;
+        src: url(font/venusr.ttf);
+    }
+    h1 {
+        font-family: myFirstFont;
+    }
 </style>
 
 </head>
@@ -284,17 +329,6 @@
 							<a id="logo" title="Totuldesprecaini" href="index.html"></a>
 						</td>
 
-						<td>
-							<div id="site_search">
-								<ci-search></ci-search>
-							</div>
-						</td>
-
-						<td style="width: 246px; position: relative;" valign="top">
-							<div id="account">
-							</div>
-						</td>
-
 					</tr>
 				</table>
 			</div>
@@ -313,12 +347,16 @@
 						<a id="food" class="firstlevel" href="mancare.html">
 							<span class="firstlevel">Mancare</span>
 						</a>
+						<ul class="drop_menu">
+							<li><a href="mancare.html">Uscata</a></li>
+							<li><a href="mancare-umeda.html">Umeda</a></li>	
+						</ul>
 					</li>
-					<li id="button_dog_treats">
-						<a id="treat" class="firstlevel" href="the-dog-treat-directory.html">
+					<!--<li id="button_dog_treats">
+						<a id="treat" class="firstlevel" href="gustari.html">
 							<span class="firstlevel">Gustari</span>
 						</a>
-					</li>
+					</li>-->
 					<li id="button_feeding_guide">
 						<a id="resources" class="firstlevel" href="dog-feeding-guide.html">
 							<span class="firstlevel">Important</span>
@@ -365,43 +403,214 @@
 						</a>
 					</li>
 				</ul>
-
-				<div style="position: relative;">
-					<div id="peeking-dog"></div>
-				</div>
-
 			</div>
 		</div>
 
 	</div>
+	
+	<!-- <table align="center" cellpadding='-15' cellspacing='0' border="0">
+  <tr>
+    <td>
+      <div class="xsmall_slider">
+	    <table class="full_width" cellpadding='0' cellspacing='0' border="0">
+			<tr>
+			  <td align="center" style="padding: 20px 12px 19px;">
+		<table class="filter_form_table" cellpadding='-10' cellspacing='0' border="0">
+		  <tr>
+		    <td>
+			  <div id="go_button_3" class="button" onclick="document.location.href='';" style="width: 140px;">Pret descrescator</div>
+			  <div id="go_button_3" class="button" onclick="document.location.href='';" style="width: 115px;">Pret crescator</div>
+			  <div id="go_button_3" class="button" onclick="document.location.href='';" style="width: 150px;">Notare crescatoare</div>
+			  <div id="go_button_3" class="button" onclick="document.location.href='';" style="width: 170px;">Notare descrescatoare</div>
+			</td>
+		  </tr>
+		</table>
+	          </td>
+	        </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table> -->
 
 	<div id="main">
 
 		<div class="wrapper">
 
-			<!-- Tabla de sus -->
-			<table id="home_upper_table" cellpadding="0" cellspacing="0" border="0">
-				<tr>
-					<td valign="middle" style="width: 51%;">
-						<div id="upper_box_1">
-							<div id="which-dog-food">
-							  <style>
-							  h1 {text-align: center;}
-							  p {text-align: center;}
-							  div {text-align: center;}
-							  </style>
-								<h1>Gustari</h1><br>
-								<p></p>
-								<p>Ne pare rau dar aceasta sectiune este inca in constructie.</p><br><br><br><br><br><br><br>
-								
-								<img src="https://i.imgur.com/Zk7b786.png" alt="alternatetext">
-							</div>
-						</div>
-					</td>
-				</tr>
+			<!-- Tabla de jos -->
+			<table id="home_lower_table" class="main_table" cellpadding='0' cellspacing='0' border="0">
+			<td valign="top">
+						<!-- Prima coloana -->
+						<table class="full_width" cellpadding='0' cellspacing='0' border="0">
+
+							<tr>
+								<td>
+									<table cellpadding='0' cellspacing='0' class="whitebox" border="0">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0001/farmina-nd-prime-puisirodie.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/70/8606014102529F1.png" width="215" height="270" alt="Farmina N&D Prime" title="Farmina N&D Prime"/>
+</div>
+<a href="dog-treat-reviews/0001/farmina-nd-prime-puisirodie.html" class="product-title" title="Farmina N&D Prime"><h2>Farmina N&D Prime<br> Hrana umeda</h2></a><br>
+<span>23,45</span>&nbsp;<span class="ty-price-num">LEI/285g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">9</span></span>
+</div>
+
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<table class="full_width" cellpadding='0' cellspacing='0' border="0">
+							<tr>
+								<td>
+									<table cellpadding='0' cellspacing='0' class="whitebox" border="0">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0004/brit-patemeat-puppy-chicken.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/63/8595602530335F1.png" width="215" height="270" alt="Brit Pate&meat Puppy chicken&turkey" title="Brit Pate&meat Puppy chicken&turkey"/>
+</div>
+<a href="dog-treat-reviews/0004/brit-patemeat-puppy-chicken.html" class="product-title" title="Brit Pate&meat Puppy chicken&turkey"><h2>Brit Pate&meat Puppy chicken&turkey<br> Hrana umeda</h2></a><br>
+<span>6,20</span>&nbsp;<span class="ty-price-num">LEI/400g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">9</span></span>
+</div>
+
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						</td>
+						
+					<td valign="top">
+					
+						<!-- a doua coloana -->
+						
+						<table class="full_width" cellpadding='0' cellspacing='0'>
+							<tr>
+								<td>
+									<table id="article" cellpadding='0' cellspacing='0' class="whitebox">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0002/wiejska-zagroda-junior-mix.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/75/5906874201657F1.png" width="215" height="270" alt="Wiejska Zagroda Junior Mix" title="Wiejska Zagroda Junior Mix"/>
+</div>
+<a href="dog-treat-reviews/0002/wiejska-zagroda-junior-mix.html" class="product-title" title="Wiejska Zagroda Junior Mix"><h2>Wiejska Zagroda Junior Mix<br> Hrana umeda</h2></a><br>
+<span>17,53</span>&nbsp;<span class="ty-price-num">LEI/800g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">9</span></span>
+</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<table class="full_width" cellpadding='0' cellspacing='0'>
+							<tr>
+								<td>
+									<table id="article" cellpadding='0' cellspacing='0' class="whitebox">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0005/brit-monoprotein-lamb.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/63/x8595602529728F1.png.pagespeed.ic.R_-I8rJeqw.webp" width="215" height="270" alt="Brit Mono Protein Lamb & Rice" title="Brit Mono Protein Lamb & Rice"/>
+</div>
+<a href="dog-treat-reviews/0005/brit-monoprotein-lamb.html" class="product-title" title="Brit Mono Protein Lamb & Rice"><h2>Brit Mono Protein Lamb & Rice<br> Hrana umeda</h2></a><br>
+<span>6,90</span>&nbsp;<span class="ty-price-num">LEI/400g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">9</span></span>
+</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						</td>
+					<td valign="top">
+					
+						<!-- a treia coloana -->
+						
+						<table class="full_width" cellpadding='0' cellspacing='0'>
+							<tr>
+								<td>
+									<table id="article" cellpadding='0' cellspacing='0' class="whitebox">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0003/brit-premium-miel-hrisca.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/79/8595602538621F1.png" width="215" height="270" alt="Brit Premium By Nature Miel si Hrisca" title="Brit Premium By Nature Miel si Hrisca"/>
+</div>
+<a href="dog-treat-reviews/0003/brit-premium-miel-hrisca.html" class="product-title" title="Brit Premium By Nature Miel si Hrisca"><h2>Brit Premium By Nature Miel si Hrisca<br>Hrană umeda</h2></a><br>
+<span>4,41</span>&nbsp;<span class="ty-price-num">LEI/400g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">9</span></span>
+</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<table class="full_width" cellpadding='0' cellspacing='0'>
+							<tr>
+								<td>
+									<table id="article" cellpadding='0' cellspacing='0' class="whitebox">
+										<tr>
+											<td>
+<div  onclick="document.location.href='dog-treat-reviews/0006/brit-premium-sausage-pui.html'">
+<img class="ty-pic" style="position: relative; top: -20px; right: -40px;" src="https://fera.ro/images/thumbnails/215/270/detailed/65/x8595602531233F1.png.pagespeed.ic.s6BKI6L9sS.webp" width="215" height="270" alt="Brit Premium Sausage Pui" title="Brit Premium Sausage Pui"/>
+</div>
+<a href="dog-treat-reviews/0006/brit-premium-sausage-pui.html" class="product-title" title="Brit Premium Sausage Pui"><h2>Brit Premium Sausage Pui<br>Hrană umeda</h2></a><br>
+<span>7,20</span>&nbsp;<span class="ty-price-num">LEI/800g</span>
+<div class="panel_rating" style="background-color: hsl(90, 100%, 43%);  overflow: visible; white-space: nowrap;">
+<h3 style="position: relative; top: 20px; left: 40px; color: white; font-size: 3em;"><b>Nota</b></h3>
+<span class="rating_reading"><span style="position: relative; top: -22px; right: -30px; font-size: 3.5em;">10</span></span>
+</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+                    </td>						
+
 			</table>
+			
 
 		</div>
+		
+			<!--<table align="center" cellpadding='-15' cellspacing='0' border="0">
+  <tr>
+    <td>
+      <div class="xsmall_slider">
+	    <table class="full_width" cellpadding='0' cellspacing='0' border="0">
+			<tr>
+			  <td align="center" style="padding: 20px 12px 19px;">
+		<table class="filter_form_table" cellpadding='-10' cellspacing='0' border="0">
+		  <tr>
+		    <td>
+			  <div id="go_button_3" class="button" onclick="document.location.href='mancare.html'" style="width: 25px; background-color:#2a6c89;">1</div>
+			  <div id="go_button_3" class="button" onclick="document.location.href='mancare-pag-2.html'" style="width: 25px;">2</div>
+			</td>
+		  </tr>
+		</table>
+	          </td>
+	        </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table> -->
+
         <script type="text/javascript">
 
 		var age_slider = document.getElementById('age_slider');
