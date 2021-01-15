@@ -384,7 +384,7 @@
 		<div class="wrapper">
 
 			<!-- Tabla de sus -->
-			<table id="home_upper_table" cellpadding="0" cellspacing="0" border="0">
+			<table id="" cellpadding="0" cellspacing="0" border="0">
 				<tr>
 					<td valign="middle" style="width: 51%;">
 						<div id="upper_box_1">
@@ -406,99 +406,6 @@
 			</table>
 
 		</div>
-        <script type="text/javascript">
-
-		var age_slider = document.getElementById('age_slider');
-
-		noUiSlider.create(age_slider, {
-			start: 36,
-			behaviour: 'extend-tap',
-			step: 1,
-			range: {
-				'min': [ 1, 1 ],
-				'32%': [ 12, 3 ],
-				'50%': [ 24, 12 ],
-				'max': [ 144, 12 ]
-			},
-			connect: 'lower'
-		});
-
-		var age_out = document.getElementById('age_out');
-		var age_out_unit = document.getElementById('age_out_unit');
-
-		age_slider.noUiSlider.on('update', function( values, handle ) {
-			value=1*values;
-			if (value >= 144) {
-				age_out = '12+';
-				age_out_unit = 'years';
-			} else if (value >= 24) {
-				age_out = value / 12;
-				age_out_unit = 'years';
-			} else if (value == 1) {
-				age_out = 'Weaning';
-				age_out_unit = '';
-			} else {
-				age_out = value;
-				age_out_unit = 'months';
-			}
-			$('#age_out').html(age_out);
-			$('#age_out_unit').html(age_out_unit);
-		});
-
-
-		var weight_slider = document.getElementById('weight_slider');
-
-		noUiSlider.create(weight_slider, {
-			start: 14,
-			behaviour: 'extend-tap',
-			step: 1,
-			range: {
-				'min': [ 0.25, 0.25 ],
-				'15%': [ 1, 0.5 ],
-				'30%': [ 3, 1 ],
-				'45%': [ 10, 2 ],
-				'60%': [ 20, 5 ],
-				'85%': [ 60, 10 ],
-				'max': [ 90, 10 ]
-			},
-			connect: 'lower'
-		});
-
-		var weight_out = document.getElementById('weight_out');
-
-		weight_slider.noUiSlider.on('update', function( values, handle ) {
-			value=1*values;
-			if (value < 1) weight_out = value.toFixed(2);
-			else if (value < 3) weight_out = value.toFixed(1);
-			else weight_out = value.toFixed(0);
-			$('#weight_out').html(weight_out);
-		});
-
-
-		var cost_slider = document.getElementById('cost_slider');
-
-		noUiSlider.create(cost_slider, {
-			start: 2.5,
-			step: 0.1,
-			range: {
-				'min': 0.1,
-				'max': 10
-			},
-			connect: 'lower'
-		});
-
-		var cost_out = document.getElementById('cost_out');
-
-		cost_slider.noUiSlider.on('update', function( values, handle ) {
-			value=1*values;
-			if (value >= 10) $('#cost_out').html('Unlimited');
-			else {
-				var cost_out = value.toFixed(2);
-				$('#cost_out').html('£' + cost_out + ' /day');
-			}
-		});
-
-	</script>
 
 	
 		</div>
